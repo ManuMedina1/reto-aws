@@ -11,7 +11,7 @@ app = Flask(__name__)
 @app.route('/dias', methods=['GET'])
 def obtener_dias():
     respuesta = tabla.scan()  # Consulta todos los registros de la tabla
-    dias = [{"id": item["id"], "dia": item["dia"]} for item in respuesta["Items"]]
+    dias = [{"id": item["Id"], "dia": item["Dia"]} for item in respuesta["Items"]]
     return jsonify({"dias": dias})
 
 if __name__ == '__main__':
